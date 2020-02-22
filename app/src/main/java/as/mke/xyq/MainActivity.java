@@ -46,8 +46,8 @@ public class MainActivity extends Loon
         setting.isMemory=true;
         setting.isLogo=false;
         setting.fullscreen=true;
-        setting.width=480;
-        setting.height=320;
+        setting.width=800;
+        setting.height=600;
         setting.fontName = "Dialog";
         setting.useOrientation=false;//设置横屏
        //setting.useRatioScaleFactor=true;

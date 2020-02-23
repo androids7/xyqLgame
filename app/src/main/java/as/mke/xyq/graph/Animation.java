@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Vector;
 
 import loon.LTexture;
+import loon.opengl.GLEx;
 import loon.opengl.LTextureImage;
 
 public class Animation extends AbstractWidget {
@@ -213,7 +214,7 @@ public class Animation extends AbstractWidget {
     }
 
     @Override
-    public void draw(Canvas g, int x, int y) {
+    public void draw(GLEx g, int x, int y) {
         //x -= refPixelX;
         //y -= refPixelY;
         this.currFrame.draw(g, x, y);

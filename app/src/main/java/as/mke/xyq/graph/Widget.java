@@ -4,6 +4,8 @@ import android.graphics.Canvas;
 
 import java.io.Serializable;
 
+import loon.opengl.GLEx;
+
 public interface  Widget extends Serializable {
 
     /**
@@ -11,7 +13,7 @@ public interface  Widget extends Serializable {
      */
     public static final int ANIMATION_INTERVAL = 100;
 
-    void draw(Canvas g ,int x, int y);
+    void draw(GLEx g , int x, int y);
 
     void dispose();
 

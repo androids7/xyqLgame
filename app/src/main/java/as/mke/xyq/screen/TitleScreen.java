@@ -4,6 +4,7 @@ import as.mke.xyq.MainActivity;
 import as.mke.xyq.graph.Animation;
 
 import as.mke.xyq.graph.SpriteFactory;
+import as.mke.xyq.scene.SceneHandler;
 import loon.LSystem;
 import loon.Screen;
 import loon.canvas.LColor;
@@ -43,6 +44,8 @@ public class TitleScreen extends Screen {
             public void doClick() {
                 start.setEnabled(false);
 
+               addScreen("two", SceneHandler.createSceneWz());
+               runScreen("two");
             }
         };
         start.setLocation(600, 80);

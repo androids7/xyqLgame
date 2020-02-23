@@ -239,9 +239,9 @@ public class TCPImageDecoder {
         for (int i = 0; i < frameInfos.size(); i++) {
             FrameInfo frameInfo = frameInfos.get(i);
             int[] framePixels = this.parsePixels(randomIn, frameInfo.frameOffset, frameInfo.lineOffsets, frameInfo.width, frameInfo.height);
-            Bitmap image = null;
+           // Bitmap image = null;
             if (!rawFrame) {
-                image = createImage(framePixels, frameInfo.width, frameInfo.height);
+               // image = createImage(framePixels, frameInfo.width, frameInfo.height);
                 Image tex = Image.createImage(frameInfo.width, frameInfo.height);
                 tex.setPixels(framePixels, frameInfo.width, frameInfo.height);
                 LTexture texture = LTexture.createTexture(frameInfo.width, frameInfo.height);

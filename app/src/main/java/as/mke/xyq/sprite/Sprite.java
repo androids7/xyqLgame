@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import as.mke.xyq.graph.AbstractWidget;
 import as.mke.xyq.graph.Animation;
 import as.mke.xyq.graph.SpriteFactory;
+import loon.opengl.GLEx;
 
 /**
  * 精灵
@@ -85,7 +86,7 @@ public class Sprite extends AbstractWidget {
         this.animations = null;
     }
 
-    public void draw(Canvas g, int x, int y) {
+    public void draw(GLEx g, int x, int y) {
         getAnimation().draw(g, x, y);
     }
 

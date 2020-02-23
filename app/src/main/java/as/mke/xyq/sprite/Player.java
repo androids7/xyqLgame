@@ -2,7 +2,7 @@ package as.mke.xyq.sprite;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
+
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.hardware.camera2.params.MeteringRectangle;
@@ -20,7 +20,10 @@ import as.mke.xyq.MainActivity;
 import as.mke.xyq.graph.AbstractWidget;
 import as.mke.xyq.graph.Animation;
 import as.mke.xyq.graph.SpriteFactory;
+import loon.canvas.LColor;
+import loon.canvas.Paint;
 import loon.geom.RectBox;
+import loon.opengl.GLEx;
 
 /**
  * 游戏人物
@@ -620,7 +623,7 @@ public class Player extends AbstractWidget {
         }
     }
 
-    public void draw(Canvas g, int x, int y) {
+    public void draw(GLEx g, int x, int y) {
         if(shadow != null){
             shadow.draw(g, x, y);
         }
@@ -634,13 +637,16 @@ public class Player extends AbstractWidget {
         // draw name
         int textX = x;
         int textY = y + 30;
+
         Paint paint = new Paint();
-        paint.setTextAlign(Paint.Align.CENTER);
-        paint.setTypeface(Typeface.create("宋体",Typeface.NORMAL));
+
+        //paint.setTypeface(Typeface.create("宋体",Typeface.NORMAL));
         paint.setTextSize(16);
         paint.setColor(bgcolor);
         //名字阴影
-        g.drawText(data.name, textX + 1, textY + 1,paint);
+
+
+        g.drawText(data.name,(float)(textX + 1), (float)(textY + 1),paint);
         //名字
         paint.setColor(isHover?lightcolor:fgcolor);
         g.drawText(data.name, textX, textY, paint);
@@ -654,8 +660,10 @@ public class Player extends AbstractWidget {
             onceEffect.draw(g, x, y);
         }
         if(MainActivity.isDebug()) {
-            g.drawLine(x-10, y, x+10, y, paint);
-            g.drawLine(x, y-10, x, y+10, paint);
+
+            LColor color=new LColor(255,0,0);
+            g.drawLine((float)(x-10),(float) y,(float) (x+10), (float)y,color);
+            g.drawLine((float)x, (float)y-10, x, y+10,color);
         }
     }
 

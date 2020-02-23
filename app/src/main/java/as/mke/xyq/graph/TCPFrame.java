@@ -9,6 +9,7 @@ import android.util.DisplayMetrics;
 import java.lang.ref.SoftReference;
 
 import loon.LTexture;
+import loon.opengl.GLEx;
 
 public class TCPFrame implements Frame{
 
@@ -109,10 +110,11 @@ public class TCPFrame implements Frame{
         this.refY = refY;
     }
 
-    public void draw(Canvas g, int x, int y) {
+    public void draw(GLEx g, int x, int y) {
         int actualX = x - refX;
         int actualY = y - refY;
-        getImage().draw(actualX,actualY);
+       // getImage().draw(actualX,actualY);
+        g.drawBitmap(getImage(),actualX,actualY,null);
       //  g.drawBitmap(, actualX, actualY, null);
 //        Paint paint = new Paint();
 //        g.drawLine(actualX-5,actualY,actualX+5,actualY, paint);
